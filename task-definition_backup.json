@@ -1,0 +1,78 @@
+{
+    "family": "first-run-task-definition",
+    "taskRoleArn": null,
+    "executionRoleArn": "arn:aws:iam::541893147748:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "sample-app",
+            "image": "httpd:2.4",
+            "repositoryCredentials": null,
+            "cpu": 256,
+            "memory": 512,
+            "memoryReservation": 512
+	}
+    ],
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [
+                "sh",
+		"-c"
+            ],
+            "command": [
+                "/bin/sh -c \"echo '<html> <head> <title>Amazon ECS Sample App</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h1>Amazon ECS Sample App</h1> <h2>Congratulations!</h2> <p>Your application is now running on a container in Amazon ECS.</p> </div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
+            ],
+            "environment": [],
+            "environmentFiles": null,
+            "mountPoints": [],
+            "volumesFrom": [],
+            "linuxParameters": null,
+            "secrets": null,
+            "dependsOn": null,
+            "startTimeout": null,
+            "stopTimeout": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "disableNetworking": null,
+            "privileged": null,
+            "readonlyRootFilesystem": null,
+            "dnsServers": null,
+            "dnsSearchDomains": null,
+            "extraHosts": null,
+            "dockerSecurityOptions": null,
+            "interactive": null,
+            "pseudoTerminal": null,
+            "dockerLabels": null,
+            "ulimits": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/first-run-task-definition",
+		    "awslogs-region": "us-east-2",
+		    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": null
+            },
+            "healthCheck": null,
+            "systemControls": null,
+            "resourceRequirements": null,
+            "firelensConfiguration": null,
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": null,
+    "pidMode": null,
+    "ipcMode": null,
+    "proxyConfiguration": null,
+    "inferenceAccelerators": null
+}
