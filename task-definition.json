@@ -4,7 +4,7 @@
     "networkMode": "awsvpc", 
     "containerDefinitions": [
         {
-            "name": "fargate-app", 
+            "name": "sample-app", 
             "image": "httpd:2.4", 
             "portMappings": [
                 {
